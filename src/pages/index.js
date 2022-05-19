@@ -1,9 +1,26 @@
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions, Image, TouchableOpacity } from 'react-native';
+import { useFonts, Koulen_400Regular } from '@expo-google-fonts/koulen';
+import { useNavigation } from '@react-navigation/native';
+import { AppLoading } from 'expo-app-loading';
+
 
 const { height, width } = Dimensions.get('screen');
 
-export default function Home() {
+export default function Home() {  
+    
+    //navigation
+    const navigation = useNavigation();
+    
+    //load fonts
+    const [fonstLoaded] = useFonts({ Koulen_400Regular})
+ 
+
+    if(!fonstLoaded){
+        <AppLoading/>
+    }
+
+
  return (
    <View style={styles.container}>
        <View>
@@ -19,7 +36,7 @@ export default function Home() {
         <Text style={styles.Titulo}>Pamela & Gabriel</Text>
         <Text style={styles.CronoData}>30 : 05 : 45 : 22</Text>
 
-        <TouchableOpacity style={styles.BtPresenca}>
+        <TouchableOpacity style={styles.BtPresenca} >
             <Text style={{fontWeight:'bold'}}>CONFIRME SUA PRESENÇA</Text>
         </TouchableOpacity>
 
@@ -40,23 +57,26 @@ const styles = StyleSheet.create({
     },
     imgBG: {
         height:height,
-        width:width
+        width:width,
     },
     dataPosition: {
         position:'absolute',
-        left:10,
-        top:10
+        left:20,
+        top:30
       },
       dataEvento: {
-        color:'#A6A5A5',
-        fontWeight:'bold',
-        fontSize:50
+        fontFamily:'Koulen_400Regular', 
+        position:'absolute', 
+        top:10, 
+        fontSize:50,
+        color:'#30302f'
+        
       },
       anoEvento: {
         position:'absolute',
-        top:60,
-        fontWeight:'bold',
-        color:'#A6A5A5',
+        top:70,
+        fontFamily:'Koulen_400Regular',
+        color:'#30302f',
         fontSize:30
       },
       painelBaixo: {
@@ -74,8 +94,8 @@ const styles = StyleSheet.create({
       CronoData: {
         color:'#fff',
         fontSize:40,
-        fontWeight:'700',
         paddingBottom:20,
+        fontFamily:'Koulen_400Regular'
       },
       BtPresenca: {
         width:300,
@@ -83,6 +103,7 @@ const styles = StyleSheet.create({
         borderRadius:5,
         backgroundColor:'#fff',
         justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',
+        marginBottom:20
       }
     });
