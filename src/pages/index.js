@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, Dimensions, Image, TouchableOpacity } from 'react-native';
 import { useFonts, Koulen_400Regular } from '@expo-google-fonts/koulen';
 import { useNavigation } from '@react-navigation/native';
-import { AppLoading } from 'expo-app-loading';
+import AppLoading from 'expo-app-loading';
 
 
 const { height, width } = Dimensions.get('screen');
@@ -10,15 +10,14 @@ const { height, width } = Dimensions.get('screen');
 export default function Home() {  
     
     //navigation
-    const navigation = useNavigation();
+  const navigation = useNavigation();
     
     //load fonts
-    const [fonstLoaded] = useFonts({ Koulen_400Regular})
- 
-
-    if(!fonstLoaded){
-        <AppLoading/>
-    }
+  const [fontsLoaded]  = useFonts({ Koulen_400Regular })
+  
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  } else {
 
 
  return (
@@ -36,7 +35,7 @@ export default function Home() {
         <Text style={styles.Titulo}>Pamela & Gabriel</Text>
         <Text style={styles.CronoData}>30 : 05 : 45 : 22</Text>
 
-        <TouchableOpacity style={styles.BtPresenca} >
+        <TouchableOpacity style={styles.BtPresenca} onPress={() => navigation.navigate('ConfirmePresenca')}>
             <Text style={{fontWeight:'bold'}}>CONFIRME SUA PRESENÇA</Text>
         </TouchableOpacity>
 
@@ -45,6 +44,7 @@ export default function Home() {
        
    </View>
   );
+ }
 }
 
 const styles = StyleSheet.create({
@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
       Titulo: {
         fontSize:40,
         fontWeight:'bold',
+        fontFamily:'GreatVibes_400Regular',
         paddingBottom:10,
         color:'#fff'
       },

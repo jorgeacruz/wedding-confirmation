@@ -4,7 +4,9 @@ import { useNavigation } from '@react-navigation/native';
 
 export default function ConfirmePresenca() {
     const navigation = useNavigation();
- return (
+ 
+ 
+    return (
    <View style={styles.container}>
        <StatusBar hidden={true} />
        <View style={{flex:1}}>
@@ -12,9 +14,9 @@ export default function ConfirmePresenca() {
        </View>
        <View style={{flex:1}}>
            <Text style={styles.TitleConfirma}>Confirme sua presença!</Text>
-           <View>
-               <Text></Text>
-           </View>
+        <View>
+        
+        </View>
        </View>
        
    </View>
