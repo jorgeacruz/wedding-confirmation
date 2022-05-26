@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, StatusBar, Image } from 'react-native';
+import { View, Text, StyleSheet, StatusBar, Image, } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 export default function ConfirmePresenca() {
@@ -15,6 +15,9 @@ export default function ConfirmePresenca() {
        <View style={{flex:1}}>
            <Text style={styles.TitleConfirma}>Confirme sua presença!</Text>
         <View>
+        <View>
+
+        </View>
         
         </View>
        </View>
@@ -32,6 +35,6 @@ const styles = StyleSheet.create({
     },
     TitleConfirma: {
         color:'#fff',
-        fontSize:30
+        fontSize:20
     }
 });

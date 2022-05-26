@@ -26,14 +26,11 @@ export default function Home() {
             <Image source={require('../images/homePam.png')} style={styles.imgBG}/>
        </View>
 
-       <View style={styles.dataPosition}>
-        <Text style={styles.dataEvento}>30.05</Text>
-        <Text style={styles.anoEvento}>2022</Text>
-      </View>
-
       <View style={styles.painelBaixo}>
         <Text style={styles.Titulo}>Pamela & Gabriel</Text>
-        <Text style={styles.CronoData}>30 : 05 : 45 : 22</Text>
+        <Text style={styles.subTituilo}>CASINHA  LE JULIE</Text>
+        <Text style={styles.endereco}>Alameda dos Aicás, 1303 | Moema - SP</Text>
+        <Text style={styles.CronoData}>30.07.2022 | 18h30</Text>
 
         <TouchableOpacity style={styles.BtPresenca} onPress={() => navigation.navigate('ConfirmePresenca')}>
             <Text style={{fontWeight:'bold'}}>CONFIRME SUA PRESENÇA</Text>
@@ -83,21 +80,33 @@ const styles = StyleSheet.create({
         position:'absolute',
         justifyContent:'center',
         alignItems:'center',
-        bottom:30
+        bottom:40
       },
       Titulo: {
         fontSize:40,
         fontWeight:'bold',
         fontFamily:'GreatVibes_400Regular',
-        paddingBottom:10,
+        paddingBottom:3,
         color:'#fff'
       },
       CronoData: {
         color:'#fff',
-        fontSize:40,
-        paddingBottom:20,
+        fontSize:30,
+        paddingBottom:5,
         fontFamily:'Koulen_400Regular'
       },
+      subTituilo: {
+        color:'#fff',
+        fontSize:30,
+        paddingBottom:2,
+        fontFamily:'Koulen_400Regular'
+      },
+      endereco: {
+        color:'#fff',
+        fontSize:15,
+        paddingBottom:20,
+      },
+      
       BtPresenca: {
         width:300,
         height:40,
@@ -105,6 +114,5 @@ const styles = StyleSheet.create({
         backgroundColor:'#fff',
         justifyContent:'center',
         alignItems:'center',
-        marginBottom:20
       }
     });
