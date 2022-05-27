@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, StatusBar, Image, TextInput, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-import ThkUpage from './thkUpage';
+import ThkUpage from './paGina';
+import Obrigado from './obrigado';
+import Home from './index';
 
 
 export default function ConfirmePresenca() {
@@ -17,20 +19,20 @@ export default function ConfirmePresenca() {
                 <Text style={styles.TitleConfirma}>Confirme sua presença!</Text>
 
                 <Text style={{color:'#fff'}}>Você irá ao evento?</Text>
-                    <View style={{borderWidth:1, borderColor:'#fff', width:360, height:40, borderRadius:8, margin:10, justifyContent:'center'}}>
+                <View style={styles.FormatoTexto}>
                         <TextInput placeholder='Insira seu nome completo' placeholderTextColor={'#ffff'} style={{paddingStart:4, color:'#fff'}}/>
                     </View>
-                    <View style={{borderWidth:1, borderColor:'#fff', width:360, height:40, borderRadius:8, margin:10, justifyContent:'center'}}>
+                    <View style={styles.FormatoTexto}>
                         <TextInput placeholder='Insira seu telefone de contato' placeholderTextColor={'#ffff'} style={{paddingStart:4, color:'#fff'}}/>
                     </View>
-                    <View style={{borderWidth:1, borderColor:'#fff', width:360, height:40, borderRadius:8, margin:10, justifyContent:'center'}}>
+                    <View style={styles.FormatoTexto}>
                         <TextInput placeholder='Insira seu melhor email' placeholderTextColor={'#ffff'} style={{paddingStart:4, color:'#fff'}}/>
                         
                     </View>
                     <Text style={{color:'#fff', padding:10}}>Quantidade de aldulto incluindo voce</Text>
                     <Text style={{color:'#fff', padding:20}}>Quantidade de crianças</Text>
                     <View>
-                        <TouchableOpacity style={{padding:10, backgroundColor:'#fff', borderRadius:5, width:300, alignItems:'center'}} onPress={() => navigation.navigate('ThkUpage')}>
+                        <TouchableOpacity style={styles.btConfirmar} onPress={() => navigation.navigate('paGina')}>
                             <Text>CONFIRMA SUA PRESENÇA</Text>
                         </TouchableOpacity>
                     </View>
@@ -61,6 +63,22 @@ const styles = StyleSheet.create({
         width:300,
         height:2,
         borderWidth:1,
-
+    },
+    FormatoTexto: {
+        borderWidth:1, 
+        borderColor:'#fff', 
+        width:300, 
+        height:40, 
+        borderRadius:8, 
+        margin:10, 
+        justifyContent:'center', 
+        alignItems:'center'
+    },
+    btConfirmar: {
+        padding:10, 
+        backgroundColor:'#fff', 
+        borderRadius:5, 
+        width:300, 
+        alignItems:'center'
     }
 });

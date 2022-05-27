@@ -25,38 +25,32 @@ export default function Home() {
        <View>
             <Image source={require('../images/homePam.png')} style={styles.imgBG}/>
        </View>
-
       <View style={styles.painelBaixo}>
         <Text style={styles.Titulo}>Pamela & Gabriel</Text>
         <Text style={styles.subTituilo}>CASINHA  LE JULIE</Text>
         <Text style={styles.endereco}>Alameda dos Aicás, 1303 | Moema - SP</Text>
         <Text style={styles.CronoData}>30.07.2022 | 18h30</Text>
-
-        <TouchableOpacity style={styles.BtPresenca} onPress={() => navigation.navigate('ConfirmePresenca')}>
+        <TouchableOpacity style={styles.BtPresenca} onPress={() => navigation.navigate('Obrigado')}>
             <Text style={{fontWeight:'bold'}}>CONFIRME SUA PRESENÇA</Text>
         </TouchableOpacity>
-
       </View>
-      
-       
    </View>
   );
  }
 }
 
 const styles = StyleSheet.create({
-    container: {
+      container: {
         flex:1,
         justifyContent:'center',
         alignItems:'center',
         backgroundColor:'#fff'
-
-    },
-    imgBG: {
+      },
+      imgBG: {
         height:height,
         width:width,
-    },
-    dataPosition: {
+      },
+      dataPosition: {
         position:'absolute',
         left:20,
         top:30
